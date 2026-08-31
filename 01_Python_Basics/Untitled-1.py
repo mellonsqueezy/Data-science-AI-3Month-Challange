@@ -1,5 +1,5 @@
 # -------------------------------------------------------------
-# DAY 3: Python Functions, Modular Code & Metrics
+# DAY 3: Python Functions & Metrics
 # -------------------------------------------------------------
 
 # 1. Basic Function Definition
@@ -10,9 +10,7 @@ def greet_student(name: str, target_role: str = "AI Engineer") -> str:
 
 # 2. Data Processing Function
 def process_experiment_results(scores: list[float], threshold: float = 0.70) -> dict:
-    """
-    Calculates average accuracy score and filters successful ML experiments.
-    """
+    """Calculates average accuracy score and filters successful ML experiments."""
     if not scores:
         return {"error": "Empty score list provided"}
 
@@ -27,12 +25,13 @@ def process_experiment_results(scores: list[float], threshold: float = 0.70) -> 
     }
 
 
+# 3. Mini Challenge Function: Find Maximum Score
 def find_max_score(scores: list[float]) -> float:
+    """Returns the highest score from a list of scores."""
     return max(scores)
 
 
-
-# 3. Execution Block
+# 4. Execution Block
 if __name__ == "__main__":
     # Test Greeting
     print(greet_student("Developer", "AI & Data Science Specialist"))
@@ -46,9 +45,8 @@ if __name__ == "__main__":
     for key, value in metrics.items():
         print(f"{key.upper()}: {value}")
 
-
-
     print("-" * 50)
+    # Test Mini Challenge Result
     test_scores = [0.45, 0.88, 0.92, 0.71]
     highest_score = find_max_score(test_scores)
     print(f"HIGHEST SCORE IN EXPERIMENTS: {highest_score}")
